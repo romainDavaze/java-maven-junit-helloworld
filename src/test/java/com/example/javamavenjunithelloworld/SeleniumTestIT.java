@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 public class SeleniumTestIT {
     
     @Test
-    public void getTest() {
+    public void getTest() throws MalformedURLException {
 		DesiredCapabilities capabilities =  DesiredCapabilities.chrome();
  
 		WebDriver webDriver = new RemoteWebDriver(new URL("http://zalenium:4445/wd/hub/"), capabilities);
