@@ -22,6 +22,7 @@ public class SeleniumTestIT {
 		DesiredCapabilities capabilities =  DesiredCapabilities.chrome();
  
 		WebDriver webDriver = new RemoteWebDriver(new URL("http://zalenium:4445/wd/hub/"), capabilities);
+        webDriver.manage().window().maximize();
 
         webDriver.get("https://www.sigma.fr/");
 
@@ -29,7 +30,11 @@ public class SeleniumTestIT {
 
         assertThat(actualTitle, is("Edition de logiciels, Infogérance, Solutions digitales | Sigma"));
 
-        Thread.sleep(2000);
+        Thread.sleep(5000);
+
+        webDriver.findElement(By.id("tarteaucitronPersonalize")).click();
+
+        Thread.sleep(5000);
 
         webDriver.findElement(By.xpath("//li/a[text()='Contact'][1]")).click();
 
@@ -37,7 +42,7 @@ public class SeleniumTestIT {
         WebElement Element = webDriver.findElement(By.name("153941_55395pi_153941_55395"));
         js.executeScript("arguments[0].scrollIntoView();", Element);
 
-        Thread.sleep(1000);
+        Thread.sleep(3000);
 
         Element.sendKeys("Tutti !");
 
@@ -49,6 +54,7 @@ public class SeleniumTestIT {
 		DesiredCapabilities capabilities =  DesiredCapabilities.firefox();
  
 		WebDriver webDriver = new RemoteWebDriver(new URL("http://zalenium:4445/wd/hub/"), capabilities);
+		webDriver.manage().window().maximize();
 
         webDriver.get("https://www.sigma.fr/");
 
@@ -56,7 +62,11 @@ public class SeleniumTestIT {
 
         assertThat(actualTitle, is("Edition de logiciels, Infogérance, Solutions digitales | Sigma"));
 
-        Thread.sleep(2000);
+        Thread.sleep(5000);
+
+        webDriver.findElement(By.id("tarteaucitronPersonalize")).click();
+
+        Thread.sleep(5000);
 
         webDriver.findElement(By.xpath("//li/a[text()='Contact'][1]")).click();
 
@@ -64,7 +74,7 @@ public class SeleniumTestIT {
         WebElement Element = webDriver.findElement(By.name("153941_55395pi_153941_55395"));
         js.executeScript("arguments[0].scrollIntoView();", Element);
 
-        Thread.sleep(1000);
+        Thread.sleep(3000);
 
         Element.sendKeys("Tutti !");
 
