@@ -10,12 +10,34 @@ import org.junit.jupiter.api.Test;
 public class SeleniumTestIT {
     
     @Test
-    public void getTest() throws MalformedURLException {
+    public void chromeTest() throws MalformedURLException {
 		DesiredCapabilities capabilities =  DesiredCapabilities.chrome();
  
 		WebDriver webDriver = new RemoteWebDriver(new URL("http://zalenium:4445/wd/hub/"), capabilities);
 
-        webDriver.get("https://huongdanjava.com/");
+        webDriver.get("https://www.sigma.fr/");
+
+        actualTitle = driver.getTitle();
+
+        assertThat(actualTitle, is("Edition de logiciels, Infogérance, Solutions digitales | Sigma"));
+
+        driver.close();
     }
+
+    @Test
+    public void firefoxTest() throws MalformedURLException {
+		DesiredCapabilities capabilities =  DesiredCapabilities.firefox();
+ 
+		WebDriver webDriver = new RemoteWebDriver(new URL("http://zalenium:4445/wd/hub/"), capabilities);
+
+        webDriver.get("https://www.sigma.fr/");
+
+        actualTitle = driver.getTitle();
+
+        assertThat(actualTitle, is("Edition de logiciels, Infogérance, Solutions digitales | Sigma"));
+
+        driver.close();
+    }
+
  
 }
