@@ -20,7 +20,7 @@ public class SeleniumTestIT {
 
         webDriver.get("https://www.sigma.fr/");
 
-        String actualTitle = driver.getTitle();
+        String actualTitle = webDriver.getTitle();
 
         assertThat(actualTitle, is("Edition de logiciels, Infogérance, Solutions digitales | Sigma"));
 
@@ -35,7 +35,7 @@ public class SeleniumTestIT {
 
         webDriver.get("https://www.sigma.fr/");
 
-        String actualTitle = driver.getTitle();
+        String actualTitle = webDriver.getTitle();
 
         assertThat(actualTitle, is("Edition de logiciels, Infogérance, Solutions digitales | Sigma"));
 
