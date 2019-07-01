@@ -6,6 +6,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import org.junit.jupiter.api.Test;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
  
 public class SeleniumTestIT {
     
@@ -21,7 +24,7 @@ public class SeleniumTestIT {
 
         assertThat(actualTitle, is("Edition de logiciels, Infogérance, Solutions digitales | Sigma"));
 
-        driver.close();
+        webDriver.close();
     }
 
     @Test
@@ -36,7 +39,7 @@ public class SeleniumTestIT {
 
         assertThat(actualTitle, is("Edition de logiciels, Infogérance, Solutions digitales | Sigma"));
 
-        driver.close();
+        webDriver.close();
     }
 
  
