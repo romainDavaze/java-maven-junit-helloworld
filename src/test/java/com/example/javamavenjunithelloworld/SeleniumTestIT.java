@@ -36,7 +36,9 @@ public class SeleniumTestIT {
 
         Thread.sleep(5000);
 
-        webDriver.findElement(By.xpath("//li/a[text()='Contact'][1]")).click();
+        webDriver.get("https://www.sigma.fr/contact");
+
+        Thread.sleep(5000);
 
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
         WebElement Element = webDriver.findElement(By.name("153941_55395pi_153941_55395"));
@@ -45,6 +47,8 @@ public class SeleniumTestIT {
         Thread.sleep(3000);
 
         Element.sendKeys("Tutti !");
+
+        Thread.sleep(3000);
 
         webDriver.close();
     }
@@ -68,7 +72,9 @@ public class SeleniumTestIT {
 
         Thread.sleep(5000);
 
-        webDriver.findElement(By.xpath("//li/a[text()='Contact'][1]")).click();
+        webDriver.get("https://www.sigma.fr/contact");
+
+        Thread.sleep(5000);
 
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
         WebElement Element = webDriver.findElement(By.name("153941_55395pi_153941_55395"));
@@ -77,6 +83,8 @@ public class SeleniumTestIT {
         Thread.sleep(3000);
 
         Element.sendKeys("Tutti !");
+
+        Thread.sleep(3000);
 
         webDriver.close();
     }
