@@ -4,8 +4,10 @@ import java.net.URL;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+
+import org.junit.jupiter.api.Test;
  
-public class RemoteWebDriverExample {
+public class SeleniumTestIT {
     
     @Test
     public void getTest() {
