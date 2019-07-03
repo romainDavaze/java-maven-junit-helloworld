@@ -22,6 +22,7 @@ public class SeleniumTestIT {
 		DesiredCapabilities capabilities =  DesiredCapabilities.chrome();
  
 		WebDriver webDriver = new RemoteWebDriver(new URL("http://zalenium:4445/wd/hub/"), capabilities);
+		JavascriptExecutor js = (JavascriptExecutor) webDriver;
         webDriver.manage().window().maximize();
 
         webDriver.get("https://www.sigma.fr/");
@@ -34,23 +35,17 @@ public class SeleniumTestIT {
 
         webDriver.findElement(By.id("tarteaucitronPersonalize")).click();
 
-        Thread.sleep(5000);
-
-        webDriver.get("https://www.sigma.fr/contact");
-
-        Thread.sleep(5000);
-
-        JavascriptExecutor js = (JavascriptExecutor) webDriver;
-        WebElement Element = webDriver.findElement(By.name("153941_55395pi_153941_55395"));
-        js.executeScript("arguments[0].scrollIntoView();", Element);
-
-        Thread.sleep(3000);
-
-        Element.sendKeys("Tutti !");
-
-        Thread.sleep(3000);
+        js.executeScript("window.scrollTo(0,112)");
+        webDriver.findElement(By.cssSelector("#sticky-nav-clone .panelBkg-darkblue > a")).click();
+        js.executeScript("window.scrollTo(0,134)");
+        js.executeScript("window.scrollTo(0,383)");
+        webDriver.switchTo().frame(0);
+        webDriver.findElement(By.id("153941_55395pi_153941_55395")).click();
+        webDriver.findElement(By.id("153941_55395pi_153941_55395")).sendKeys("Tutti ! \n");
+        webDriver.findElement(By.id("153941_55393pi_153941_55393_640653")).click();
 
         webDriver.close();
+
     }
 
     @Test
@@ -58,7 +53,8 @@ public class SeleniumTestIT {
 		DesiredCapabilities capabilities =  DesiredCapabilities.firefox();
  
 		WebDriver webDriver = new RemoteWebDriver(new URL("http://zalenium:4445/wd/hub/"), capabilities);
-		webDriver.manage().window().maximize();
+        JavascriptExecutor js = (JavascriptExecutor) webDriver;
+        webDriver.manage().window().maximize();
 
         webDriver.get("https://www.sigma.fr/");
 
@@ -70,21 +66,14 @@ public class SeleniumTestIT {
 
         webDriver.findElement(By.id("tarteaucitronPersonalize")).click();
 
-        Thread.sleep(5000);
-
-        webDriver.get("https://www.sigma.fr/contact");
-
-        Thread.sleep(5000);
-
-        JavascriptExecutor js = (JavascriptExecutor) webDriver;
-        WebElement Element = webDriver.findElement(By.name("153941_55395pi_153941_55395"));
-        js.executeScript("arguments[0].scrollIntoView();", Element);
-
-        Thread.sleep(3000);
-
-        Element.sendKeys("Tutti !");
-
-        Thread.sleep(3000);
+        js.executeScript("window.scrollTo(0,112)");
+        webDriver.findElement(By.cssSelector("#sticky-nav-clone .panelBkg-darkblue > a")).click();
+        js.executeScript("window.scrollTo(0,134)");
+        js.executeScript("window.scrollTo(0,383)");
+        webDriver.switchTo().frame(0);
+        webDriver.findElement(By.id("153941_55395pi_153941_55395")).click();
+        webDriver.findElement(By.id("153941_55395pi_153941_55395")).sendKeys("Tutti ! \n");
+        webDriver.findElement(By.id("153941_55393pi_153941_55393_640653")).click();
 
         webDriver.close();
     }
